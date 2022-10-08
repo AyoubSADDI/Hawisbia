@@ -1,0 +1,143 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*cloud*/
+		.awan_1 {
+			background:url("../img/awan/awan_1.png");
+			position:absolute;
+			left:0;
+			top:0;
+			height:100%;
+			width:300%;
+			-webkit-animation:awan_1 50s linear infinite;
+			-moz-animation:awan_1 50s linear infinite;
+			-o-animation:awan_1 50s linear infinite;
+			animation:awan_1 50s linear infinite;
+			-webkit-transform:translate3d(0,0,0);
+			-moz-transform:translate3d(0,0,0);
+			-o-transform:translate3d(0,0,0);
+			transition:translate3d(0,0,0);
+		}
+		
+		.awan_2 {
+			background:url("../img/awan/awan_1.png");
+			position:absolute;
+			left:0;
+			top:0;
+			height:100%;
+			width:300%;
+			-webkit-animation:awan_2 75s linear infinite;
+			-moz-animation:awan_2 75s linear infinite;
+			-o-animation:awan_2 75s linear infinite;
+			animation:awan_2 75s linear infinite;
+			-webkit-transform:translate3d(0,0,0);
+			-moz-transform:translate3d(0,0,0);
+			-o-transform:translate3d(0,0,0);
+		}
+		
+		.awan_3 {
+			background:url("../img/awan/awan_1.png");
+			position:absolute;
+			left:0;
+			top:0;
+			height:100%;
+			width:300%;
+			-webkit-animation:awan_3 50s linear infinite;
+			-moz-animation:awan_3 50s linear infinite;
+			-o-animation:awan_3 50s linear infinite;
+			animation:awan_3 50s linear infinite;
+			-webkit-transform:translate3d(0,0,0);
+			-moz-transform:translate3d(0,0,0);
+			-o-transform:translate3d(0,0,0);
+		}
+		
+		@-webkit-keyframes sky_background {
+			0% {
+				background:#000;
+				color:#007fd5
+			}
+			
+			50% {
+				background:#000;
+				color:#a3d9ff
+			}
+			
+			100% {
+				background:#000;
+				color:#007fd5
+			}
+		}
+		@keyframes sky_background {
+			0% {
+				background:#000;
+				color:#007fd5
+			}
+			
+			50% {
+				background:#000;
+				color:#a3d9ff
+			}
+			
+			100% {
+				background:#000;
+				color:#007fd5
+			}
+		}
+		
+		
+		@-webkit-keyframes awan_1 {
+			0% {
+				left:0
+			}
+		
+			100% {
+				left:-200%
+			}
+		}
+		@keyframes awan_1 {
+			0% {
+				left:0
+			}
+		
+			100% {
+				left:-200%
+			}
+		}
+		
+		@-webkit-keyframes awan_2 {
+			0% {
+				left:0
+			}
+		
+			100% {
+				left:-200%
+			}
+		}
+		@keyframes awan_2 {
+			0% {
+				left:0
+			}
+		
+			100% {
+				left:-200%
+			}
+		}
+		
+		@-webkit-keyframes awan_3 {
+			0% {
+				left:0
+			}
+		
+			100% {
+				left:-200%
+			}
+		}
+		@keyframes awan_3 {
+			0% {
+				left:0
+			}
+		
+			100% {
+				left:-200%
+			}
+		}

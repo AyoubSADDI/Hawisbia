@@ -1,0 +1,82 @@
+@import url("./css/bootstrap.min.css");
+@import url("./css/expedition-style.css");
+@import url("./css/queries-expedition.css");
+body,html{
+    width: 100%;
+    height:100%;
+}
+header{background-color: black;}
+#main-menu{
+  background-color: black;
+}
+
+
+.myitem {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-attachment:scroll;
+    background-size:cover; 
+    background-position:center center; 
+    background-repeat:no-repeat;
+}
+.myitem img {
+    min-height: 100%;
+    width: 100%;
+    height:100%;
+    top: 0;
+    left: 0;
+  }
+  .myimgs{
+    
+        border-radius: 50%;
+        height:"1rem";
+        width: "1rem";
+    
+  }
+  @media (max-width: 768px) { 
+    #logo{
+     display: none;
+   }
+   }
+   .layer {
+    height: 100%;
+    width: 100%;
+    background: black;
+    overflow: hidden;
+    background: #141e30;  /* fallback colour. Make sure this is just one solid colour. */
+    background: -webkit-linear-gradient(rgba(20, 30, 48, 0.8), rgba(36, 59, 85, 0.8)), url("./pr.jpg");
+    background: linear-gradient(rgba(20, 30, 48, 0.8), rgba(36, 59, 85, 0.8)), url("./pr.jpg"); /* The least supported option. */
+    background-repeat: no-repeat;
+background-position: center center;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+
+}
+.myobtn{
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+}
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  
+}
+.texture{
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:1;
+  background:url('texture.png');
+}

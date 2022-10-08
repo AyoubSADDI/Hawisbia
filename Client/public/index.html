@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <title>Hawas Bia - Zaghouane - First Heritage application in North africa - زغوان</title>
+    <meta name="google-site-verification" content="tOgDinqzGYcdyIM41teTZgKuJKcWE97fmBnCBAXvPSA" />
+
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <meta content="" name="keywords">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <script>
+      var map = L.map('map'),
+    realtime = L.realtime({
+        url: 'https://wanderdrone.appspot.com/',
+        crossOrigin: true,
+        type: 'json'
+    }, {
+        interval: 3 * 1000
+    }).addTo(map);
+ 
+realtime.on('update', function() {
+    map.fitBounds(realtime.getBounds(), {maxZoom: 3});
+});
+    </script>
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css"
+  />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/e1a46ff2e2.js" crossorigin="anonymous"></script>
+  <link
+  rel="stylesheet"
+  href="https://video-react.github.io/assets/video-react.css"
+/>
+<script>
+  var x = document.getElementById("pcr");
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+  
+  function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
+  }
+  </script> 
+
+
+    <!-- Bootstrap CSS -->
+ 
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="%PUBLIC_URL%/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  .Demo__some-network__share-button{
+    background-image: url("logo.png");
+  }
+  /* width */
+.mylangc{
+  background-color: brown;
+}
+
+
+</style>
+
+<script>
+  //var mymap = L.map('mapid').setView([36.409119, 	10.142317], 12);
+
+  var mymap = L.map('mapid', {
+        tap: false,
+        center: new L.LatLng(36.409119, 	10.142317),
+        minZoom: 12,
+         maxZoom: 12,
+        fullscreenControl: true,
+        fullscreenControlOptions: { // optional
+            title:"Show me the fullscreen !",
+            titleCancel:"Exit fullscreen mode"
+        }
+    });
+
+
+
+  L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+    maxZoom: 40,
+    attribution: '',
+
+  }).addTo(mymap);
+
+  mymap.on('enterFullscreen', function(){
+        if(window.console) window.console.log('enterFullscreen');
+    });
+    mymap.on('exitFullscreen', function(){
+        if(window.console) window.console.log('exitFullscreen');
+    });
+  coordinates = [
+    [37.2346492, 9.918276],
+    [36.3979902,10.1459361],
+    [36.387511, 10.130815],
+    [36.397502,10.145531]
+ 
+  ]
+
+  price = ['Menzel jemil', 'Beb Essouk' , 'sidek ali azzouz','the water temple']
+  images = ['https://s.iha.com/00154983926/Menzel-jemil-Station-thermale-de-korbous-pres-de-menzel-jemil.jpeg', 'https://mapio.net/images-p/73139567.jpg', 'https://zaherkammoun.com/wp-content/uploads/2016/03/Sidi-Ali-Azzouz-5-1364x900.jpg' ,'http://www.webdo.tn/wp-content/uploads/2017/02/Temple-des-Eaux-de-Zaghouan.jpg']
+  
+  heading = ['Menzel jemil', 'Beb Essouk', 'sidek ali azzouz', 'the water temple']
+  description=['1','Les souks de Tunis sont un ensemble de magasins, boutiques et ateliers situés dans la médina de Tunis et édifiés pour la plupart dès le XIII siècle. ','Le bâtiment est construit au cours du xixe siècle pour les besoins de la confrérie Azouzia1, fondée par le saint et érudit Sidi Ali Azouz2.','Cette montagne de 1295 mètres de hauteur est idéale pour pratiquer des activités à couper le souffle: lescalade, la spéléologie, le canyon, le VTT… Au printemps, la montagne est fleurie à souhait. Il sen dégage des parfums de thym et de romarin absolument étourdissants.']
+  let l = coordinates.length;
+  var grid1 = document.querySelector('#grid1');
+  var grid2 = document.querySelector('#grid2');
+  var grid3 = document.querySelector('#grid3');
+  var grid4 = document.querySelector('#grid4');
+  
+  grids = [grid1, grid2, grid3, grid4]
+
+  
+  for (let i = 0; i < l; i++) {
+  
+  
+  
+    // pop up
+  
+    var popup = L.popup({
+      closeOnClick: true
+    }).setContent('<div class="card" style="background:none;"><img src=' + images[i] + '><div class="info"><h2>'+ heading[i] + '</h2><h4>'+ description[i] + '</h4></div><div>');
+  
+    // Marker Icon
+  
+    var myIcon = L.divIcon({
+      className: 'icon',
+      iconSize: [25, 41],
+    });
+    var marker = L.marker(coordinates[i], {
+      icon: myIcon,
+    }).addTo(mymap).bindPopup(popup);
+  
+    // tooltip  
+    var tooltip = L.tooltip({
+      permanent: true,
+      direction: 'center',
+      opacity: 1,
+  
+    }).setContent(price[i]);
+    marker.bindTooltip(tooltip);
+    
+    grids[i].addEventListener("mouseover", () => {
+      mymap.flyTo(coordinates[i], 16);
+    })
+  }
+
+    L.Routing.control({
+    waypoints: [L.latLng(36.3979902,10.1459361), L.latLng(36.387511, 10.130815)],
+
+}).addTo(mymap);
+
+L.Routing.control({
+    waypoints: [L.latLng(36.387511, 10.130815), L.latLng(36.397502, 10.145531)],
+
+}).addTo(mymap);
+
+L.Routing.control({
+    waypoints: [L.latLng(36.397502, 10.145531), L.latLng(36.3979902,10.1459361)],
+
+}).addTo(mymap);
+  
+</script>
+    <!-- expedition CSS -->
+    <link href="http://fonts.googleapis.com/css?family=Exo:100,300,400|Raleway:400,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.7/dist/leaflet-routing-machine.css" type="text/css">
+    
+    <script src='https://unpkg.com/leaflet@1.7.1/dist/leaflet.js'></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3MJWJFN38W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3MJWJFN38W');
+</script>
+
+  <!--
+    Notice the use of %PUBLIC_URL% in the tags above.
+    It will be replaced with the URL of the `public` folder during the build.
+    Only files inside the `public` folder can be referenced from the HTML.
+
+    Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+    work correctly both with client-side routing and a non-root public URL.
+    Learn how to configure a non-root public URL by running `npm run build`.
+  -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css"
+  />
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js'></script>
+    <script src='https://unpkg.com/leaflet-routing-machine@3.2.7/dist/leaflet-routing-machine.js'></script>
+    <script src="%PUBLIC_URL%/css/Control.FullScreen.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkwSucdX9ZyaQcaU86l-FX8rPMRNrJHEo&amp;v=3"></script>
+    
+    <link  href="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkwSucdX9ZyaQcaU86l-FX8rPMRNrJHEo&amp;v=3"/>
+
+    <script src="https://global.localizecdn.com/localize.js"></script>
+<script>!function(a){if(!a.Localize){a.Localize={};for(var e=["translate","untranslate","phrase","initialize","translatePage","setLanguage","getLanguage","getSourceLanguage","detectLanguage","getAvailableLanguages","untranslatePage","bootstrap","prefetch","on","off","hideWidget","showWidget"],t=0;t<e.length;t++)a.Localize[e[t]]=function(){}}}(window);</script>
+
+<script>
+  Localize.initialize({
+    key: '9wR3FkgmZCwU1',
+    rememberLanguage: true,
+    localizeImages:true,
+    blockedClasses:["mylangc"]
+  });
+</script>
+
+<script
+src="https://kit.fontawesome.com/64d58efce2.js"
+crossorigin="anonymous"
+></script>
+
+<script type="text/javascript" src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+<!-- Start of ChatBot (www.chatbot.com) code -->
+<!-- Start of ChatBot (www.chatbot.com) code -->
+<!-- Start of ChatBot (www.chatbot.com) code -->
+<!-- Start of ChatBot (www.chatbot.com) code -->
+<script src="js/object-fit-videos.js"></script>
+<script src="js/app.js"></script>
+
+<!-- End of ChatBot code -->
+<!-- End of ChatBot code -->
+
+<!-- End of ChatBot code -->
+<!-- End of ChatBot code -->
+ 
+
+
+
+
+
+
+<!-- expedition JS -->
+
+  </body>
+</html>

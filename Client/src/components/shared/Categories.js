@@ -1,0 +1,32 @@
+export  const CATEGORIES=[
+    {
+        id:1,
+        nbrPossible:2,
+        categName:"OnlineStore",
+    },
+    {
+        id:0,
+        nbrPossible:10,
+        categName:"Events",
+    },
+    {
+        id:2,
+        nbrPossible:14,
+        categName:"maisonDhotes",
+    },
+    {
+        id:3,
+        nbrPossible:17,
+        categName:"Jeux",
+    },
+    {
+        id:4,
+        nbrPossible:3,
+        categName:"Gastronomy",
+    },
+    {
+        id:5,
+        nbrPossible:5,
+        categName:"Excursions",
+    }
+]
